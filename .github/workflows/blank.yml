@@ -14,4 +14,4 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Build with jdk
-        run: javac HelloWorld.java
+        run: pwd
