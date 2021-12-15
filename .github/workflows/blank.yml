@@ -21,3 +21,4 @@ jobs:
         run: ls
       - name: Run the Program to see the result
         run: java HelloWorld
+        run: java HelloWorld  
