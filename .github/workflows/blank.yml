@@ -1,32 +1,17 @@
-# This is a basic workflow to help you get started with Actions
+name: Java CI
 
-name: CI
+on: [push]
 
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
-    runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        java: [ '8' ]
-    name: Java ${{ matrix.Java }} sample
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
-      - name: Setup java
+      - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
+          java-version: '11'
           distribution: 'adopt'
-          java-version: ${{ matrix.java }}
-      - run: mvn --batch-mode --update-snapshots verify
-     # - run: java -cp . HelloWorld
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots verify
