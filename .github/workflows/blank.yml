@@ -28,5 +28,5 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: ${{ matrix.java }}
-      - run: javac Helloworld.java
-      - run: java -cp . HelloWorld
+      - run: mvn --batch-mode --update-snapshots verify
+     # - run: java -cp . HelloWorld
