@@ -15,3 +15,7 @@ jobs:
           distribution: 'adopt'
       - name: Build with jdk
         run: pwd
+      - name: Compile code using javac
+        run: javac HelloWorld.java
+      - name: LIst the files
+        run: ls
