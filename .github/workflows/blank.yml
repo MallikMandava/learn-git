@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: MallikRunner
+    runs-on: rhel8-esxi
 
     steps:
       - uses: actions/checkout@v2
