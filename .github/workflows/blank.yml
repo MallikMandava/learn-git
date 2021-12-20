@@ -19,5 +19,5 @@ jobs:
         run: javac HelloWorld.java
       - name: LIst the files
         run: ls
-      - name: Run the Program to see the result
+      - name: Run the Program to see the  result
         run: java HelloWorld
